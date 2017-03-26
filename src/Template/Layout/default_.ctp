@@ -1,0 +1,60 @@
+<?php
+$cakeTitle = 'App Basic';
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <?= $this->Html->charset() ?>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $cakeTitle ?></title>
+    <?= $this->Html->css('bootstrap.min.css') ?>
+
+    <?= $this->fetch('meta') ?>
+    <?= $this->fetch('css') ?>
+    <?= $this->fetch('script') ?>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><?= $this->fetch('title') ?></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">Inicio</a></li>
+                        <li><a href="">Entradas</a></li>
+                        <li><a href="">Etiquetas</a></li>
+                        <li><a href="">Categorías</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UserName<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="">Perfíl</a></li>
+                                <li><a href="#">Salir</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+    </header><!-- /header -->
+
+    <section>
+        <?= $this->Flash->render() ?>
+        <div class="container">
+            <?= $this->fetch('content') ?>
+        </div>
+    </section>
+
+    <?= $this->Html->script('jquery.min.js') ?>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <?= $this->Html->script('bootstrap.min.js') ?>
+</body>
+</html>
